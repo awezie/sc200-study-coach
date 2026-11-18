@@ -1,30 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>SC-200 Study Coach</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>SC-200 Study Command Center</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>SC-200 Study Coach</h1>
+<h1>SC-200 Study Command Center</h1>
 
-<p id="countdown"></p>
+<div class="card">
+  <h2>Exam Countdown</h2>
+  <p id="countdown"></p>
+</div>
+
+<div class="card">
+  <h2>Readiness Score</h2>
+  <p id="readiness">0%</p>
+</div>
+
+<div class="card">
+  <h2>Study Streak</h2>
+  <p id="streak">0 Days</p>
+</div>
+
+<div class="card">
+  <h2>Today's Mission</h2>
+
+  <label>
+    <input type="checkbox" class="task">
+    Microsoft Learn Reading
+  </label>
+
+  <br>
+
+  <label>
+    <input type="checkbox" class="task">
+    KQL Practice
+  </label>
+
+  <br>
+
+  <label>
+    <input type="checkbox" class="task">
+    MeasureUp Questions
+  </label>
+
+  <br>
+
+  <label>
+    <input type="checkbox" class="task">
+    Review Flashcards
+  </label>
+
+</div>
+
+<div class="card">
+
+<h2>Progress</h2>
+
+<progress id="progressBar"
+value="0"
+max="100">
+</progress>
+
+<p id="progressText">
+0%
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>MeasureUp Score</h2>
+
+<input
+type="number"
+id="score"
+min="0"
+max="100">
+
+<button id="saveScore">
+Save Score
+</button>
+
+</div>
+
+<div class="card">
 
 <h2>Study Notes</h2>
 
-<textarea id="notes"
-rows="10"
-cols="80"
-placeholder="Enter your notes here..."></textarea>
+<textarea
+id="notes"
+rows="12">
+</textarea>
 
-<br><br>
+<br>
 
 <button id="saveBtn">
 Save Notes
 </button>
 
 <p id="status"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Flashcard</h2>
+
+<div id="flashcard">
+Click Next Card
+</div>
+
+<button id="nextCard">
+Next Card
+</button>
+
+</div>
 
 <script type="module" src="app.js"></script>
 
