@@ -108,7 +108,7 @@ date:"2026-11-22",
 tier:"🔴 Tier 1 (Critical)",
 topic:"Incidents and Alerts",
 link:"https://learn.microsoft.com/azure/sentinel/incidents"
-}
+},
 {
 date:"2026-11-23",
 tier:"🔴 Tier 1 (Critical)",
