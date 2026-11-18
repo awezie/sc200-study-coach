@@ -109,7 +109,103 @@ tier:"🔴 Tier 1 (Critical)",
 topic:"Incidents and Alerts",
 link:"https://learn.microsoft.com/azure/sentinel/incidents"
 }
+{
+date:"2026-11-23",
+tier:"🔴 Tier 1 (Critical)",
+topic:"Defender XDR Incidents",
+link:"https://learn.microsoft.com/defender-xdr/incidents-overview"
+},
 
+{
+date:"2026-11-24",
+tier:"🔴 Tier 1 (Critical)",
+topic:"Advanced Hunting",
+link:"https://learn.microsoft.com/defender-xdr/advanced-hunting-overview"
+},
+
+{
+date:"2026-11-25",
+tier:"🔴 Tier 1 (Critical)",
+topic:"Device Investigation",
+link:"https://learn.microsoft.com/defender-endpoint/investigate-machines"
+},
+
+{
+date:"2026-11-26",
+tier:"🔴 Tier 1 (Critical)",
+topic:"Automatic Attack Disruption",
+link:"https://learn.microsoft.com/defender-xdr/automatic-attack-disruption"
+},
+
+{
+date:"2026-11-27",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Fundamentals",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/tutorials/learn-common-operators"
+},
+
+{
+date:"2026-11-28",
+tier:"🟠 Tier 2 (Important)",
+topic:"Microsoft Security Copilot Fundamentals",
+link:"https://learn.microsoft.com/security-copilot/get-started-security-copilot"
+},
+
+{
+date:"2026-11-29",
+tier:"🟠 Tier 2 (Important)",
+topic:"Microsoft Security Copilot Workflows",
+link:"https://learn.microsoft.com/security-copilot/"
+},
+
+{
+date:"2026-11-30",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Where Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-01",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Summarize Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-02",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Project Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-03",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Extend Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-04",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Join Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-05",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Parse Operator",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+},
+
+{
+date:"2026-12-06",
+tier:"🔴 Tier 1 (Critical)",
+topic:"KQL Review Lab",
+link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
+}
 ];
 
 const studyDay =
