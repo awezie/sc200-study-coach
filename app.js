@@ -695,6 +695,145 @@ async()=>{
 
 }
 );
+// ======================================
+// CALENDAR COMPLETION
+// ======================================
+
+const markStudyDayButton =
+document.getElementById("markComplete");
+
+const calendarStatus =
+document.getElementById("calendarStatus");
+
+async function markStudyDayComplete(){
+
+    const selectedItem =
+    studyPlan[
+        studyDay.value
+    ];
+
+    try{
+
+        const snap =
+        await getDoc(
+            doc(
+                db,
+                "users",
+                "awele"
+            )
+        );
+
+        let completedTopics =
+        {};
+
+        if(
+            snap.exists()
+        ){
+
+            completedTopics =
+            snap.data()
+            .completedTopics ||
+            {};
+
+        }
+
+        completedTopics[
+            selectedItem.date
+        ] = true;
+
+        await setDoc(
+
+            doc(
+                db,
+                "users",
+                "awele"
+            ),
+
+            {
+
+                completedTopics:
+                completedTopics
+
+            },
+
+            {
+
+                merge:true
+
+            }
+
+        );
+
+        calendarStatus.textContent =
+        "✅ Completed";
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+async function checkCompletion(){
+
+    try{
+
+        const selectedItem =
+        studyPlan[
+            studyDay.value
+        ];
+
+        const snap =
+        await getDoc(
+            doc(
+                db,
+                "users",
+                "awele"
+            )
+        );
+
+        if(
+            snap.exists()
+            &&
+            snap.data()
+            .completedTopics
+            &&
+            snap.data()
+            .completedTopics[
+                selectedItem.date
+            ]
+        ){
+
+            calendarStatus.textContent =
+            "✅ Completed";
+
+        }
+
+        else{
+
+            calendarStatus.textContent =
+            "Not completed";
+
+        }
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+markStudyDayButton
+.addEventListener(
+"click",
+markStudyDayComplete
+);
 
 // ======================================
 // STARTUP
