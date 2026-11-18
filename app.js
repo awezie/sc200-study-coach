@@ -849,4 +849,6 @@ markStudyDayComplete
 
 loadDashboard();
 
+loadStudyDay();
+
 checkCompletion();
