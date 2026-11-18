@@ -319,21 +319,29 @@ async function loadDashboard(){
 
         const data = snap.data();
 
-        const completed =
-        data.completedDays || 0;
+       const completedTopics =
+data.completedTopics || {};
+
+const completed =
+Object.keys(
+    completedTopics
+).length;
 
         const streak =
         data.streak || 0;
 
         const readiness =
-        Math.round(
-            (completed / TOTAL_DAYS)
-            * 100
-        );
+Math.round(
+    (
+        completed /
+        studyPlan.length
+    ) * 100
+);
 
         completedDaysElement.textContent =
         completed;
-
+overallProgress.max =
+studyPlan.length;
         overallProgress.value =
         completed;
 
@@ -437,7 +445,7 @@ async function completeMission(){
             {
 
                 completedDays:
-                completed + 1,
+completed,
 
                 streak:
                 streak + 1,
