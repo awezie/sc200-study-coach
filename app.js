@@ -109,6 +109,7 @@ tier:"🔴 Tier 1 (Critical)",
 topic:"Incidents and Alerts",
 link:"https://learn.microsoft.com/azure/sentinel/incidents"
 },
+
 {
 date:"2026-11-23",
 tier:"🔴 Tier 1 (Critical)",
@@ -206,7 +207,9 @@ tier:"🔴 Tier 1 (Critical)",
 topic:"KQL Review Lab",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 }
+
 ];
+
 
 const studyDay =
 document.getElementById("studyDay");
