@@ -259,7 +259,13 @@ Open Learning Material
 
 studyDay.addEventListener(
 "change",
-loadStudyDay
+async () => {
+
+    loadStudyDay();
+
+    await checkCompletion();
+
+}
 );
 
 loadStudyDay();
