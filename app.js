@@ -757,33 +757,33 @@ async function markStudyDayComplete(){
             selectedItem.date
         ] = true;
 
-        await setDoc(
+      await setDoc(
 
-            doc(
-                db,
-                "users",
-                "awele"
-            ),
+    doc(
+        db,
+        "users",
+        "awele"
+    ),
 
-            {
+    {
 
-                completedTopics:
-                completedTopics
+        completedTopics:
+        completedTopics
 
-            },
+    },
 
-            {
+    {
 
-                merge:true
+        merge:true
 
-            }
+    }
 
-        );
+);
 
-       calendarStatus.textContent =
-        "✅ Completed";
+calendarStatus.textContent =
+"✅ Completed";
 
-         loadDashboard();
+loadDashboard(); 
 
     }
 
