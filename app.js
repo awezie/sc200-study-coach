@@ -863,10 +863,18 @@ async function checkCompletion(){
             ]
         ){
 
-           calendarStatus.textContent =
+          calendarStatus.textContent =
 "✅ Completed";
 
 loadDashboard();
+
+const currentSelection =
+studyDay.value;
+
+await renderStudyPlan();
+
+studyDay.value =
+currentSelection;
 
 const currentSelection =
 studyDay.value;
