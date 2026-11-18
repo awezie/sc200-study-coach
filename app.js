@@ -868,6 +868,14 @@ async function checkCompletion(){
 
 loadDashboard();
 
+const currentSelection =
+studyDay.value;
+
+await renderStudyPlan();
+
+studyDay.value =
+currentSelection;
+
 await renderStudyPlan();
 
         }
