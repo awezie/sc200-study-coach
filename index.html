@@ -1,160 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>SC-200 Study Command Center</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SC-200 Study Command Center</title>
+
+    <link rel="stylesheet"
+          href="style.css">
 </head>
 
 <body>
 
-<h1>SC-200 Study Command Center</h1>
+    <h1>🛡️ SC-200 Study Command Center</h1>
 
-<div class="card">
-  <h2>Exam Countdown</h2>
-  <p id="countdown"></p>
-</div>
+    <!-- Dashboard -->
 
-<div class="card">
-  <h2>Readiness Score</h2>
-  <p id="readiness">0%</p>
-</div>
+    <div class="card">
 
-<div class="card">
-  <h2>Study Streak</h2>
-  <div class="card">
+        <h2>⏳ Exam Countdown</h2>
 
-<h2>🎯 Today's Mission</h2>
+        <p id="countdown"></p>
 
-<div id="todaysMission">
+    </div>
 
-Loading mission...
+    <div class="card">
 
-</div>
+        <h2>🎓 Readiness Score</h2>
 
-<button id="completeMission">
+        <p id="readiness">0%</p>
 
-✅ Complete Today's Mission
+    </div>
 
-</button>
+    <div class="card">
 
-</div>
-  <p id="streak">0 Days</p>
-</div>
+        <h2>🔥 Study Streak</h2>
 
-<div class="card">
-  <h2>Today's Mission</h2>
+        <p id="streak">0 Days</p>
 
-  <label>
-    <input type="checkbox" class="task">
-    Microsoft Learn Reading
-  </label>
+    </div>
 
-  <br>
+    <!-- Today's Mission -->
 
-  <label>
-    <input type="checkbox" class="task">
-    KQL Practice
-  </label>
+    <div class="card">
 
-  <br>
+        <h2>🎯 Today's Mission</h2>
 
-  <label>
-    <input type="checkbox" class="task">
-    MeasureUp Questions
-  </label>
+        <div id="todaysMission">
 
-  <br>
+            Loading mission...
 
-  <label>
-    <input type="checkbox" class="task">
-    Review Flashcards
-  </label>
+        </div>
 
-</div>
+        <br>
 
-<div class="card">
+        <button id="completeMission">
 
-<h2>Progress</h2>
+            ✅ Complete Today's Mission
 
-<progress id="progressBar"
-value="0"
-max="100">
-</progress>
+        </button>
 
-<p id="progressText">
-0%
-</p>
+    </div>
 
-</div>
+    <!-- Progress -->
 
-<div class="card">
+    <div class="card">
 
-<h2>MeasureUp Score</h2>
+        <h2>📊 Overall Progress</h2>
 
-<input
-type="number"
-id="score"
-min="0"
-max="100">
+        <p>
 
-<button id="saveScore">
-Save Score
-</button>
+            Completed Days:
+            <span id="completedDays">
 
-</div>
-<div class="card">
+                0
 
-<h2>📅 SC-200 Study Calendar</h2>
+            </span>
 
-<select id="studyDay">
-<option>2026-11-18 - SC-200 Skills Measured</option>
-<option>2026-11-19 - Security Operations Concepts</option>
-<option>2026-11-20 - Microsoft Defender XDR Overview</option>
-<option>2026-11-21 - Microsoft Sentinel Overview</option>
-<option>2026-11-22 - Incidents and Alerts</option>
-</select>
+        </p>
 
-<p>
-This is the first version of the calendar.
-</p>
+        <progress id="overallProgress"
+                  value="0"
+                  max="58">
+        </progress>
 
-</div>
+        <p id="progressPercent">
 
-<div class="card">
+            0%
 
-<h2>Study Notes</h2>
+        </p>
 
-<textarea
-id="notes"
-rows="12">
-</textarea>
+    </div>
 
-<br>
+    <!-- Daily Checklist -->
 
-<button id="saveBtn">
-Save Notes
-</button>
+    <div class="card">
 
-<p id="status"></p>
+        <h2>✅ Daily Checklist</h2>
 
-</div>
+        <label>
+            <input type="checkbox"
+                   class="task">
+            Microsoft Learn Reading
+        </label>
 
-<div class="card">
+        <br><br>
 
-<h2>Flashcard</h2>
+        <label>
+            <input type="checkbox"
+                   class="task">
+            KQL Practice
+        </label>
 
-<div id="flashcard">
-Click Next Card
-</div>
+        <br><br>
 
-<button id="nextCard">
-Next Card
-</button>
+        <label>
+            <input type="checkbox"
+                   class="task">
+            MeasureUp Questions
+        </label>
 
-</div>
+        <br><br>
 
-<script type="module" src="app.js"></script>
+        <label>
+            <input type="checkbox"
+                   class="task">
+            Flashcard Review
+        </label>
+
+    </div>
+
+    <!-- MeasureUp -->
+
+    <div class="card">
+
+        <h2>📝 MeasureUp Score</h2>
+
+        <input type="number"
+               id="score"
+               min="0"
+               max="100">
+
+        <button id="saveScore">
+
+            Save Score
+
+        </button>
+
+    </div>
+
+    <!-- Calendar -->
+
+    <div class="card">
+
+        <h2>📅 SC-200 Study Calendar</h2>
+
+        <select id="studyDay">
+
+        </select>
+
+        <br><br>
+
+        <div id="studyDetails">
+
+            Select a study day.
+
+        </div>
+
+        <br>
+
+        <button id="markComplete">
+
+            ✅ Mark Study Day Complete
+
+        </button>
+
+    </div>
+
+    <!-- Notes -->
+
+    <div class="card">
+
+        <h2>📚 Study Notes</h2>
+
+        <textarea
+            id="notes"
+            rows="12"
+            placeholder="Write your Sentinel, Defender XDR, Security Copilot, and KQL notes here...">
+        </textarea>
+
+        <br><br>
+
+        <button id="saveBtn">
+
+            Save Notes
+
+        </button>
+
+        <p id="status"></p>
+
+    </div>
+
+    <!-- Mistakes Log -->
+
+    <div class="card">
+
+        <h2>❌ Mistakes Log</h2>
+
+        <textarea
+            id="mistakes"
+            rows="8"
+            placeholder="Record every mistake from MeasureUp, labs, KQL practice, and Microsoft Learn quizzes...">
+        </textarea>
+
+    </div>
+
+    <!-- Flashcards -->
+
+    <div class="card">
+
+        <h2>🧠 Flashcards</h2>
+
+        <div id="flashcard">
+
+            Click Next Card
+
+        </div>
+
+        <br>
+
+        <button id="nextCard">
+
+            Next Card
+
+        </button>
+
+    </div>
+
+    <!-- Coach -->
+
+    <div class="card">
+
+        <h2>🤖 Baby-Me Coach</h2>
+
+        <div id="coachMessage">
+
+            Welcome Awele. Let's get ready to pass SC-200 on January 15, 2027.
+
+        </div>
+
+    </div>
+
+    <script type="module"
+            src="app.js">
+    </script>
 
 </body>
+
 </html>
