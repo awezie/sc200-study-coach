@@ -782,7 +782,7 @@ async function markStudyDayComplete(){
 
         calendarStatus.textContent =
         "✅ Completed";
-
+loadDashboard();
     }
 
     catch(error){
