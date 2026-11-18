@@ -164,3 +164,441 @@ loadStudyDay
 );
 
 loadStudyDay();
+// ======================================
+// DASHBOARD DATA
+// ======================================
+
+const completedDaysElement =
+document.getElementById("completedDays");
+
+const overallProgress =
+document.getElementById("overallProgress");
+
+const progressPercent =
+document.getElementById("progressPercent");
+
+const readinessElement =
+document.getElementById("readiness");
+
+const streakElement =
+document.getElementById("streak");
+
+const todaysMissionElement =
+document.getElementById("todaysMission");
+
+const coachElement =
+document.getElementById("coachMessage");
+
+const completeMissionButton =
+document.getElementById("completeMission");
+
+const TOTAL_DAYS = 58;
+
+// ======================================
+// LOAD DASHBOARD
+// ======================================
+
+async function loadDashboard(){
+
+    try{
+
+        const snap = await getDoc(
+            doc(db,"users","awele")
+        );
+
+        if(!snap.exists()){
+            return;
+        }
+
+        const data = snap.data();
+
+        const completed =
+        data.completedDays || 0;
+
+        const streak =
+        data.streak || 0;
+
+        const readiness =
+        Math.round(
+            (completed / TOTAL_DAYS)
+            * 100
+        );
+
+        completedDaysElement.textContent =
+        completed;
+
+        overallProgress.value =
+        completed;
+
+        progressPercent.textContent =
+        readiness + "%";
+
+        readinessElement.textContent =
+        readiness + "%";
+
+        streakElement.textContent =
+        streak + " Days";
+
+        updateCoach(
+            readiness
+        );
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+// ======================================
+// TODAY'S MISSION
+// ======================================
+
+function loadTodaysMission(){
+
+    const todayIndex = Math.min(
+        studyPlan.length - 1,
+        new Date().getDate() %
+        studyPlan.length
+    );
+
+    const mission =
+    studyPlan[todayIndex];
+
+    todaysMissionElement.innerHTML = `
+
+    <strong>
+
+    ${mission.tier}
+
+    </strong>
+
+    <br><br>
+
+    ${mission.topic}
+
+    <br><br>
+
+    <a href="${mission.link}"
+    target="_blank">
+
+    Open Learning Material
+
+    </a>
+
+    `;
+
+}
+
+loadTodaysMission();
+
+// ======================================
+// COMPLETE MISSION
+// ======================================
+
+async function completeMission(){
+
+    try{
+
+        const snap =
+        await getDoc(
+        doc(db,"users","awele")
+        );
+
+        let completed = 0;
+        let streak = 0;
+
+        if(snap.exists()){
+
+            completed =
+            snap.data()
+            .completedDays || 0;
+
+            streak =
+            snap.data()
+            .streak || 0;
+
+        }
+
+        await setDoc(
+
+            doc(db,"users","awele"),
+
+            {
+
+                completedDays:
+                completed + 1,
+
+                streak:
+                streak + 1,
+
+                lastStudy:
+                new Date()
+                .toISOString()
+
+            },
+
+            {merge:true}
+
+        );
+
+        loadDashboard();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+completeMissionButton
+.addEventListener(
+"click",
+completeMission
+);
+
+// ======================================
+// BABY ME COACH
+// ======================================
+
+function updateCoach(
+    readiness
+){
+
+    if(readiness < 20){
+
+        coachElement.innerHTML =
+
+        `Awele,
+
+        Focus on 🔴 Tier 1 (Critical)
+        topics.
+
+        Complete your study mission
+        today.
+
+        Do at least
+        10 MeasureUp questions.`;
+
+    }
+
+    else if(
+        readiness < 50
+    ){
+
+        coachElement.innerHTML =
+
+        `Awele,
+
+        Good work.
+
+        Continue focusing on
+        Sentinel,
+        Defender XDR,
+        and KQL.
+
+        Do not skip labs.`;
+
+    }
+
+    else if(
+        readiness < 80
+    ){
+
+        coachElement.innerHTML =
+
+        `Awele,
+
+        You're progressing well.
+
+        Increase MeasureUp
+        practice and review
+        weak areas in Sentinel.`;
+
+    }
+
+    else{
+
+        coachElement.innerHTML =
+
+        `Awele,
+
+        Excellent progress.
+
+        Focus on Practice Exams,
+        KQL,
+        Analytics Rules,
+        and Incident Investigation.`;
+
+    }
+
+}
+
+// ======================================
+// FLASHCARDS
+// ======================================
+
+const flashcards = [
+
+{
+question:
+"What is Microsoft Sentinel?",
+
+answer:
+"Microsoft Sentinel is Microsoft's cloud-native SIEM and SOAR platform."
+},
+
+{
+question:
+"What is Defender XDR?",
+
+answer:
+"A unified security operations platform that correlates alerts and incidents."
+},
+
+{
+question:
+"What does Security Copilot do?",
+
+answer:
+"It assists analysts with investigations, summaries, hunting, and KQL generation."
+},
+
+{
+question:
+"What is KQL?",
+
+answer:
+"Kusto Query Language used to query security and operational data."
+},
+
+{
+question:
+"Alert vs Incident?",
+
+answer:
+"An Incident groups related alerts together."
+}
+
+];
+
+let currentCard = 0;
+
+const flashcardElement =
+document.getElementById(
+"flashcard"
+);
+
+const nextCardButton =
+document.getElementById(
+"nextCard"
+);
+
+function renderCard(){
+
+    flashcardElement.innerHTML = `
+
+    <strong>
+
+    ${flashcards[currentCard]
+    .question}
+
+    </strong>
+
+    <br><br>
+
+    ${flashcards[currentCard]
+    .answer}
+
+    `;
+
+}
+
+nextCardButton
+.addEventListener(
+"click",
+()=>{
+
+    currentCard++;
+
+    if(
+        currentCard >=
+        flashcards.length
+    ){
+
+        currentCard = 0;
+
+    }
+
+    renderCard();
+
+}
+);
+
+renderCard();
+
+// ======================================
+// SAVE MEASUREUP SCORE
+// ======================================
+
+const saveScoreButton =
+document.getElementById(
+"saveScore"
+);
+
+const scoreInput =
+document.getElementById(
+"score"
+);
+
+saveScoreButton
+.addEventListener(
+"click",
+async()=>{
+
+    const score =
+    parseInt(
+        scoreInput.value || 0
+    );
+
+    await setDoc(
+
+        doc(
+            db,
+            "users",
+            "awele"
+        ),
+
+        {
+
+            measureUpScore:
+            score
+
+        },
+
+        {
+
+            merge:true
+
+        }
+
+    );
+
+    alert(
+        "MeasureUp score saved ✅"
+    );
+
+}
+);
+
+// ======================================
+// STARTUP
+// ======================================
+
+loadDashboard();
