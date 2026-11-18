@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>SC-200 Study Coach</title>
+  <meta charset="UTF-8">
+  <title>SC-200 Study Coach</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <h1>SC-200 Study Coach</h1>
 
-<p>If you can see this page, GitHub Pages is working.</p>
+<p id="countdown"></p>
 
-<p>Exam Date: January 15, 2027</p>
+<h2>Study Notes</h2>
+
+<textarea id="notes"
+rows="10"
+cols="80"
+placeholder="Enter your notes here..."></textarea>
+
+<br><br>
+
+<button id="saveBtn">
+Save Notes
+</button>
+
+<p id="status"></p>
+
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
