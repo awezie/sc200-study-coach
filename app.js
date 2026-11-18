@@ -780,119 +780,26 @@ async function markStudyDayComplete(){
         let completedTopics =
         {};
 
-        if(
-            snap.exists()
-        ){
+       if(
+    snap.exists()
+    &&
+    snap.data().completedTopics
+    &&
+    snap.data().completedTopics[
+        selectedItem.date
+    ]
+){
 
-            completedTopics =
-            snap.data()
-            .completedTopics ||
-            {};
-
-        }
-
-        completedTopics[
-            selectedItem.date
-        ] = true;
-
-      await setDoc(
-
-    doc(
-        db,
-        "users",
-        "awele"
-    ),
-
-    {
-
-        completedTopics:
-        completedTopics
-
-    },
-
-    {
-
-        merge:true
-
-    }
-
-);
-
-calendarStatus.textContent =
-"✅ Completed";
-
-loadDashboard(); 
-
-    }
-
-    catch(error){
-
-        console.error(error);
-
-    }
+    calendarStatus.textContent =
+    "✅ Completed";
 
 }
+else{
 
-async function checkCompletion(){
+    calendarStatus.textContent =
+    "Not completed";
 
-    try{
-
-        const selectedItem =
-        studyPlan[
-            studyDay.value
-        ];
-
-        const snap =
-        await getDoc(
-            doc(
-                db,
-                "users",
-                "awele"
-            )
-        );
-
-        if(
-            snap.exists()
-            &&
-            snap.data()
-            .completedTopics
-            &&
-            snap.data()
-            .completedTopics[
-                selectedItem.date
-            ]
-        ){
-
-          calendarStatus.textContent =
-"✅ Completed";
-
-loadDashboard();
-
-const currentSelection =
-studyDay.value;
-
-await renderStudyPlan();
-
-studyDay.value =
-currentSelection;
-
-const currentSelection =
-studyDay.value;
-
-await renderStudyPlan();
-
-studyDay.value =
-currentSelection;
-
-await renderStudyPlan();
-
-        }
-
-        else{
-
-            calendarStatus.textContent =
-            "Not completed";
-
+}
         }
 
     }
