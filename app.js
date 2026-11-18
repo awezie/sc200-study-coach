@@ -863,8 +863,12 @@ async function checkCompletion(){
             ]
         ){
 
-            calendarStatus.textContent =
-            "✅ Completed";
+           calendarStatus.textContent =
+"✅ Completed";
+
+loadDashboard();
+
+await renderStudyPlan();
 
         }
 
