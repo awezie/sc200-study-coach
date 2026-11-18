@@ -217,19 +217,55 @@ document.getElementById("studyDay");
 const studyDetails =
 document.getElementById("studyDetails");
 
-studyPlan.forEach((item,index)=>{
+async function renderStudyPlan(){
 
-const option =
-document.createElement("option");
+    studyDay.innerHTML = "";
 
-option.value=index;
+    const snap =
+    await getDoc(
+        doc(
+            db,
+            "users",
+            "awele"
+        )
+    );
 
-option.textContent=
-`${item.date} - ${item.topic}`;
+    const completedTopics =
+    snap.exists()
+    ? snap.data()
+      .completedTopics || {}
+    : {};
 
-studyDay.appendChild(option);
+    studyPlan.forEach(
+        (item,index)=>{
 
-});
+        const option =
+        document.createElement(
+        "option"
+        );
+
+        option.value =
+        index;
+
+        const completed =
+        completedTopics[
+            item.date
+        ];
+
+        option.textContent =
+        completed
+
+        ? `✅ ${item.date} - ${item.topic}`
+
+        : `${item.date} - ${item.topic}`;
+
+        studyDay.appendChild(
+            option
+        );
+
+    });
+
+}
 
 function loadStudyDay(){
 
@@ -267,6 +303,8 @@ studyDay.addEventListener(
 
     }
 );
+
+renderStudyPlan();
 
 loadStudyDay();
 
@@ -858,7 +896,7 @@ markStudyDayComplete
 // ======================================
 
 loadDashboard();
-
+renderStudyPlan();
 loadStudyDay();
 
 checkCompletion();
