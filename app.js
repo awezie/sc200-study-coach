@@ -258,17 +258,19 @@ Open Learning Material
 }
 
 studyDay.addEventListener(
-"change",
-async () => {
+    "change",
+    async () => {
 
-    loadStudyDay();
+        loadStudyDay();
 
-    await checkCompletion();
+        await checkCompletion();
 
-}
+    }
 );
 
 loadStudyDay();
+
+checkCompletion();
 // ======================================
 // DASHBOARD DATA
 // ======================================
@@ -846,3 +848,5 @@ markStudyDayComplete
 // ======================================
 
 loadDashboard();
+
+checkCompletion();
