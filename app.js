@@ -236,53 +236,15 @@ async function renderStudyPlan() {
     });
 
 }
-async function renderStudyPlan(){
-    studyDay.innerHTML = "";
+async function renderStudyPlan() {
 
-    const snap =
-    await getDoc(
-        doc(
-            db,
-            "users",
-            "awele"
-        )
-    );
+    alert("renderStudyPlan is running");
 
-    const completedTopics =
-    snap.exists()
-    ? snap.data()
-      .completedTopics || {}
-    : {};
-
-    studyPlan.forEach(
-        (item,index)=>{
-
-        const option =
-        document.createElement(
-        "option"
-        );
-
-        option.value =
-        index;
-
-        const completed =
-        completedTopics[
-            item.date
-        ];
-
-        option.textContent =
-        completed
-
-        ? `✅ ${item.date} - ${item.topic}`
-
-        : `${item.date} - ${item.topic}`;
-
-        studyDay.appendChild(
-            option
-        );
-
-    });
-
+    studyDay.innerHTML = `
+        <option>Test 1</option>
+        <option>Test 2</option>
+        <option>Test 3</option>
+    `;
 }
 
 
