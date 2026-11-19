@@ -719,25 +719,49 @@ async function markStudyDayComplete() {
             )
         );
 
+        let completedTopics = {};
+
         if (
             snap.exists() &&
-            snap.data().completedTopics &&
-            snap.data().completedTopics[
-                selectedItem.date
-            ]
+            snap.data().completedTopics
         ) {
 
-            calendarStatus.textContent =
-                "✅ Completed";
-
-        } else {
-
-            calendarStatus.textContent =
-                "Not completed";
+            completedTopics =
+                snap.data().completedTopics;
 
         }
 
-    } catch (error) {
+        completedTopics[
+            selectedItem.date
+        ] = true;
+
+        await setDoc(
+
+            doc(
+                db,
+                "users",
+                "awele"
+            ),
+
+            {
+                completedTopics:
+                    completedTopics
+            },
+
+            {
+                merge: true
+            }
+
+        );
+
+        calendarStatus.textContent =
+            "✅ Completed";
+
+        await renderStudyPlan();
+
+    }
+
+    catch (error) {
 
         console.error(error);
 
