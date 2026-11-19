@@ -815,7 +815,7 @@ function loadStudyDay() {
     `;
 }
 
-async function initializeApp() {
+async function initializeStudyCoach() {
 
     await renderStudyPlan();
 
@@ -827,5 +827,5 @@ async function initializeApp() {
 
 }
 
-initializeApp();
+initializeStudyCoach();
 console.log("APP REACHED THE END");
