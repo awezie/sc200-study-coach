@@ -269,7 +269,6 @@ async function renderStudyPlan() {
     });
 
 }
-}
 
 studyDay.addEventListener(
     "change",
