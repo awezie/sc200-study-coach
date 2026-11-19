@@ -214,7 +214,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 
 const studyDay =
 document.getElementById("studyDay");
-console.log("studyDay =", studyDay);
+
 const studyDetails =
 document.getElementById("studyDetails");
 
@@ -834,4 +834,4 @@ async function initializeStudyCoach() {
 }
 
 initializeStudyCoach();
-console.log("APP REACHED THE END");
+
