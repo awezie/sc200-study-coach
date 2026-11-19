@@ -234,8 +234,13 @@ console.log(
 
         option.value = index;
 
-        option.textContent =
-            `${item.date} - ${item.topic}`;
+       const completed =
+    completedTopics[item.date];
+
+option.textContent =
+    completed
+        ? `✅ ${item.date} - ${item.topic}`
+        : `${item.date} - ${item.topic}`;
 
         studyDay.appendChild(option);
 
