@@ -454,7 +454,7 @@ async function completeMission(){
             {
 
                 completedDays:
-completed,
+completed + 1,
 
                 streak:
                 streak + 1,
