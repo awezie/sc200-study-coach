@@ -813,8 +813,9 @@ document.getElementById(
 );
 
 kqlQuestionElement.textContent =
-    kqlQuestions[0].question;
-const kqlQuestions = [
+  const kqlQuestions = [ 
+  kqlQuestions[0].question;
+
 
 {
     question:
@@ -888,7 +889,18 @@ document.getElementById(
         ){
 
             kqlResultElement.innerHTML =
-                document.getElementById(
+               
+const kqlAnswerElement =
+document.getElementById(
+    "kqlAnswer"
+);
+
+const kqlResultElement =
+document.getElementById(
+    "kqlResult"
+);
+
+document.getElementById(
     "checkKql"
 ).addEventListener(
     "click",
@@ -925,7 +937,6 @@ document.getElementById(
 
     }
 );
-
         }
 
         else{
