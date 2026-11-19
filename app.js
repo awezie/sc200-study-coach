@@ -453,8 +453,15 @@ Object.keys(domains)
             ) * 100
         );
 
-   domainHtml +=
-    `<p><strong>${domain}</strong>: ${percent}%</p>`;
+   domainHtml += `
+<p>
+    <strong>${domain}</strong>: ${percent}%
+</p>
+<progress
+    value="${percent}"
+    max="100">
+</progress>
+`;
 
 });
 
