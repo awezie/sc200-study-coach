@@ -849,6 +849,40 @@ document.getElementById(
 
     }
 );
+const kqlAnswerElement =
+document.getElementById(
+    "kqlAnswer"
+);
+
+const kqlResultElement =
+document.getElementById(
+    "kqlResult"
+);
+document.getElementById(
+    "checkKql"
+).addEventListener(
+    "click",
+    () => {
+
+        if(
+            kqlAnswerElement.value
+            .trim() !== ""
+        ){
+
+            kqlResultElement.innerHTML =
+                "✅ Answer Submitted";
+
+        }
+
+        else{
+
+            kqlResultElement.innerHTML =
+                "❌ Enter a KQL query first";
+
+        }
+
+    }
+);
 // ======================================
 // SAVE MEASUREUP SCORE
 // ======================================
