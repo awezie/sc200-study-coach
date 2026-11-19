@@ -1,4 +1,3 @@
-console.log("APP VERSION 12345");
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
 
