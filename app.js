@@ -267,11 +267,6 @@ async function renderStudyPlan(){
 
 }
 
-function loadStudyDay(){
-
-const item=
-studyPlan[studyDay.value];
-
 studyDetails.innerHTML=`
 
 <p><strong>${item.tier}</strong></p>
