@@ -791,7 +791,9 @@ markStudyDayComplete
 async function checkCompletion() {
 
     const selectedItem =
-        studyPlan[studyDay.value];
+    studyPlan[
+        studyDay.value || 0
+    ];
 
     if (!selectedItem) {
         return;
