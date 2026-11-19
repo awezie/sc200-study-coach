@@ -259,10 +259,6 @@ async function renderStudyPlan() {
         const completed =
     completedTopics[item.date];
 
-console.log(
-    item.date,
-    completed
-);
 
         option.textContent =
             completed
