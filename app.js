@@ -377,7 +377,15 @@ console.log("NEXT TOPIC FUNCTION CALLED");
       loadNextTopic(
     completedTopics
 );
+          }
+
+    catch(error){
+
+        console.error(error);
+
     }
+
+}
 function loadNextTopic(
     completedTopics
 ){
