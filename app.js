@@ -845,39 +845,15 @@ const kqlQuestions = [
 
 ];
 
-{
-    question:
-    "Show failed sign-ins",
-
-    answer:
-    "SigninLogs | where ResultType != 0"
-},
-
-{
-    question:
-    "Show high severity alerts",
-
-    answer:
-    "SecurityAlert | where Severity == 'High'"
-},
-
-{
-    question:
-    "Project account names only",
-
-    answer:
-    "IdentityInfo | project AccountName"
-}
-
-];
-
 let currentKqlQuestion = 0;
 let kqlCorrect = 0;
 let kqlAttempts = 0;
+
 const kqlQuestionElement =
 document.getElementById(
     "kqlQuestion"
 );
+
 const kqlProgressElement =
 document.getElementById(
     "kqlProgress"
@@ -887,14 +863,12 @@ const kqlReadinessElement =
 document.getElementById(
     "kqlReadiness"
 );
- 
+
 function updateKqlReadiness(){
 
     let readiness = 0;
 
-    if(
-        kqlAttempts > 0
-    ){
+    if(kqlAttempts > 0){
 
         readiness =
             Math.round(
@@ -935,10 +909,10 @@ document.getElementById(
 
         currentKqlQuestion++;
 
-        if (
+        if(
             currentKqlQuestion >=
             kqlQuestions.length
-        ) {
+        ){
 
             currentKqlQuestion = 0;
 
@@ -970,28 +944,32 @@ document.getElementById(
             kqlAnswerElement.value
             .toLowerCase()
             .trim();
-kqlAttempts++;
-       if (
-    actual === expected
-) {
 
-    kqlCorrect++;
+        kqlAttempts++;
 
-    kqlResultElement.innerHTML =
-        "✅ Correct";
+        if(
+            actual === expected
+        ){
 
-}
-else {
+            kqlCorrect++;
 
-    kqlResultElement.innerHTML =
-        `❌ Correct Answer:<br><br>${expected}`;
+            kqlResultElement.innerHTML =
+                "✅ Correct";
 
-}
-updateKqlReadiness();
+        }
+        else{
+
+            kqlResultElement.innerHTML =
+                `❌ Correct Answer:<br><br>${expected}`;
+
+        }
+
+       updateKqlReadiness();
 
     }
 );
 
+updateKqlReadiness();
 
 // ======================================
 // SAVE MEASUREUP SCORE
