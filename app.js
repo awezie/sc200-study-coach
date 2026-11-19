@@ -705,7 +705,7 @@ const calendarStatus =
 document.getElementById("calendarStatus");
 
 async function markStudyDayComplete() {
-
+console.log("MARK BUTTON CLICKED");
     const selectedItem =
         studyPlan[studyDay.value || 0];
 
