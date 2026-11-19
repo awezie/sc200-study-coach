@@ -698,17 +698,14 @@ document.getElementById("markComplete");
 const calendarStatus =
 document.getElementById("calendarStatus");
 
-async function markStudyDayComplete(){
+async function markStudyDayComplete() {
 
     const selectedItem =
-    studyPlan[
-        studyDay.value
-    ];
+        studyPlan[studyDay.value || 0];
 
-    try{
+    try {
 
-        const snap =
-        await getDoc(
+        const snap = await getDoc(
             doc(
                 db,
                 "users",
@@ -716,34 +713,25 @@ async function markStudyDayComplete(){
             )
         );
 
-        let completedTopics =
-        {};
+        if (
+            snap.exists() &&
+            snap.data().completedTopics &&
+            snap.data().completedTopics[
+                selectedItem.date
+            ]
+        ) {
 
-       if(
-    snap.exists()
-    &&
-    snap.data().completedTopics
-    &&
-    snap.data().completedTopics[
-        selectedItem.date
-    ]
-){
+            calendarStatus.textContent =
+                "✅ Completed";
 
-    calendarStatus.textContent =
-    "✅ Completed";
+        } else {
 
-}
-else{
+            calendarStatus.textContent =
+                "Not completed";
 
-    calendarStatus.textContent =
-    "Not completed";
-
-}
         }
 
-    }
-
-    catch(error){
+    } catch (error) {
 
         console.error(error);
 
