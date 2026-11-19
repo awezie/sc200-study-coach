@@ -372,7 +372,9 @@ overallProgress.max =
         updateCoach(
             readiness
         );
-loadNextTopic(
+console.log("NEXT TOPIC FUNCTION CALLED");
+      
+      loadNextTopic(
     completedTopics
 );
     }
