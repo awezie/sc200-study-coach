@@ -218,28 +218,57 @@ const studyDetails =
 document.getElementById("studyDetails");
 
 async function renderStudyPlan() {
-console.log("studyPlan length =",
-            studyPlan.length
-           );
+
     studyDay.innerHTML = "";
 
+    let completedTopics = {};
+
+    try {
+
+        const snap = await getDoc(
+            doc(
+                db,
+                "users",
+                "awele"
+            )
+        );
+
+        if (
+            snap.exists() &&
+            snap.data().completedTopics
+        ) {
+
+            completedTopics =
+                snap.data().completedTopics;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
     studyPlan.forEach((item, index) => {
-console.log(
-  "Adding",
-  item.topic
-);
+
         const option =
             document.createElement("option");
 
         option.value = index;
 
-       option.textContent =
-    `${item.date} - ${item.topic}`;
+        const completed =
+            completedTopics[item.date];
+
+        option.textContent =
+            completed
+                ? `✅ ${item.date} - ${item.topic}`
+                : `${item.date} - ${item.topic}`;
 
         studyDay.appendChild(option);
 
     });
 
+}
 }
 
 studyDay.addEventListener(
