@@ -334,51 +334,47 @@ async function loadDashboard(){
 
         const data = snap.data();
 
-       const completedTopics =
-data.completedTopics || {};
+        const completedTopics =
+            data.completedTopics || {};
 
-const completed =
-Object.keys(
-    completedTopics
-).length;
+        const completed =
+            Object.keys(completedTopics).length;
 
         const streak =
-        data.streak || 0;
+            data.streak || 0;
 
         const readiness =
-Math.round(
-    (
-        completed /
-        studyPlan.length
-    ) * 100
-);
+            Math.round(
+                (completed / studyPlan.length) * 100
+            );
 
-       completedDaysElement.textContent =
-    `${completed} / ${studyPlan.length}`;
+        completedDaysElement.textContent =
+            `${completed} / ${studyPlan.length}`;
 
-overallProgress.max =
-    studyPlan.length;
-      overallProgress.value =
-    completed;
+        overallProgress.max =
+            studyPlan.length;
+
+        overallProgress.value =
+            completed;
+
         progressPercent.textContent =
-        readiness + "%";
+            readiness + "%";
 
         readinessElement.textContent =
-        readiness + "%";
+            readiness + "%";
 
         streakElement.textContent =
-        streak + " Days";
+            streak + " Days";
 
         updateCoach(
             readiness
         );
-console.log("NEXT TOPIC FUNCTION CALLED");
-      
-      loadNextTopic(
-    completedTopics
-);
-          }
 
+        loadNextTopic(
+            completedTopics
+        );
+
+    }
     catch(error){
 
         console.error(error);
@@ -386,6 +382,7 @@ console.log("NEXT TOPIC FUNCTION CALLED");
     }
 
 }
+
 function loadNextTopic(
     completedTopics
 ){
