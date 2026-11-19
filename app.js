@@ -369,7 +369,10 @@ async function loadDashboard(){
         loadNextTopic(
             completedTopics
         );
-
+document.getElementById(
+    "completedTopicsList"
+).innerHTML =
+    "✅ Testing";
     }
     catch(error){
 
