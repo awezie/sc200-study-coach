@@ -840,12 +840,6 @@ async function checkCompletion() {
 
 }
 
-// ======================================
-// STARTUP
-// ======================================
-
-loadDashboard();
-renderStudyPlan();
 function loadStudyDay() {
 
     const item =
@@ -856,20 +850,26 @@ function loadStudyDay() {
     }
 
     studyDetails.innerHTML = `
-
-    <p><strong>${item.tier}</strong></p>
-
-    <p>${item.topic}</p>
-
-    <p>
-        <a href="${item.link}"
-           target="_blank">
-           Open Learning Material
-        </a>
-    </p>
-
+        <p><strong>${item.tier}</strong></p>
+        <p>${item.topic}</p>
+        <p>
+            <a href="${item.link}" target="_blank">
+                Open Learning Material
+            </a>
+        </p>
     `;
+}
+
+async function initializeApp() {
+
+    await renderStudyPlan();
+
+    loadStudyDay();
+
+    await checkCompletion();
+
+    await loadDashboard();
 
 }
 
-checkCompletion();
+initializeApp();
