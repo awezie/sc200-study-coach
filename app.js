@@ -813,14 +813,32 @@ document.getElementById(
 );
 
 kqlQuestionElement.textContent =
-    "Show failed sign-ins";
+    kqlQuestions[0].question;
 const kqlQuestions = [
 
+{
+    question:
     "Show failed sign-ins",
 
+    answer:
+    "SigninLogs | where ResultType != 0"
+},
+
+{
+    question:
     "Show high severity alerts",
 
-    "Project account names only"
+    answer:
+    "SecurityAlert | where Severity == 'High'"
+},
+
+{
+    question:
+    "Project account names only",
+
+    answer:
+    "IdentityInfo | project AccountName"
+}
 
 ];
 
@@ -842,10 +860,10 @@ document.getElementById(
 
         }
 
-        kqlQuestionElement.textContent =
-            kqlQuestions[
-                currentKqlQuestion
-            ];
+      kqlQuestionElement.textContent =
+    kqlQuestions[
+        currentKqlQuestion
+    ].question;
 
     }
 );
@@ -870,7 +888,43 @@ document.getElementById(
         ){
 
             kqlResultElement.innerHTML =
-                "✅ Answer Submitted";
+                document.getElementById(
+    "checkKql"
+).addEventListener(
+    "click",
+    () => {
+
+        const expected =
+            kqlQuestions[
+                currentKqlQuestion
+            ]
+            .answer
+            .toLowerCase()
+            .trim();
+
+        const actual =
+            kqlAnswerElement.value
+            .toLowerCase()
+            .trim();
+
+        if(
+            actual === expected
+        ){
+
+            kqlResultElement.innerHTML =
+                "✅ Correct";
+
+        }
+
+        else{
+
+            kqlResultElement.innerHTML =
+                `❌ Correct Answer:<br><br>${expected}`;
+
+        }
+
+    }
+);
 
         }
 
