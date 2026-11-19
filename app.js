@@ -988,13 +988,19 @@ document.getElementById(
     "kqlResult"
 );
 
+currentKqlQuestion =
+Math.floor(
+    Math.random() *
+    kqlQuestions.length
+);
+
 kqlQuestionElement.innerHTML =
 `
 <strong>
-${kqlQuestions[0].category}
+${kqlQuestions[currentKqlQuestion].category}
 </strong>
 <br><br>
-${kqlQuestions[0].question}
+${kqlQuestions[currentKqlQuestion].question}
 `;
 
 document.getElementById(
