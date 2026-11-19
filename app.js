@@ -924,7 +924,7 @@ document.getElementById(
     "checkKql"
 ).addEventListener(
     "click",
-    () => {
+    async () => {
 
         const expected =
             kqlQuestions[
@@ -959,41 +959,7 @@ else {
 
     }
 );
-updateKqlReadiness();
-await setDoc(
 
-    doc(
-        db,
-        "users",
-        "awele"
-    ),
-
-    {
-
-        kqlCorrect:
-            kqlCorrect,
-
-        kqlAttempts:
-            kqlAttempts,
-
-        kqlReadiness:
-            Math.round(
-                (
-                    kqlCorrect /
-                    Math.max(
-                        kqlAttempts,
-                        1
-                    )
-                ) * 100
-            )
-
-    },
-
-    {
-        merge: true
-    }
-
-);
 
 // ======================================
 // SAVE MEASUREUP SCORE
