@@ -91,7 +91,17 @@
             0%
 
         </p>
+<p>
 
+KQL Accuracy:
+
+<span id="kqlAccuracy">
+
+0%
+
+</span>
+
+</p>
     </div>
 
     <!-- Daily Checklist -->
@@ -234,7 +244,84 @@
             Click Next Card
 
         </div>
+<!-- KQL Practice Lab -->
 
+<div class="card">
+
+    <h2>🧪 KQL Practice Lab</h2>
+
+    <label for="kqlDifficulty">
+        Difficulty:
+    </label>
+
+    <select id="kqlDifficulty">
+
+        <option value="beginner">
+            Beginner
+        </option>
+
+        <option value="intermediate">
+            Intermediate
+        </option>
+
+        <option value="advanced">
+            Advanced
+        </option>
+
+        <option value="exam">
+            Exam Mode
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <div id="kqlQuestion">
+        Loading question...
+    </div>
+
+    <br>
+
+    <textarea
+        id="kqlAnswer"
+        rows="6"
+        placeholder="Write your KQL query here..."
+    ></textarea>
+
+    <br><br>
+
+    <button id="checkKql">
+        Check Answer
+    </button>
+
+    <button id="nextKql">
+        Next Question
+    </button>
+
+    <br><br>
+
+    <div id="kqlResult">
+
+    </div>
+
+</div>
+    <!-- KQL Readiness -->
+
+<div class="card">
+
+    <h2>📊 KQL Readiness</h2>
+
+    <progress
+        id="kqlProgress"
+        value="0"
+        max="100">
+    </progress>
+
+    <p id="kqlReadiness">
+        0%
+    </p>
+
+</div>    
         <br>
 
         <button id="nextCard">
