@@ -407,6 +407,14 @@ document.getElementById(
     "completedTopicsList"
 ).innerHTML =
     completedHtml;
+     if (completedHtml === "") {
+
+    document.getElementById(
+        "completedTopicsList"
+    ).innerHTML =
+        "No completed topics yet.";
+
+} 
       let domainHtml = "";
 
 const domains = {};
