@@ -828,3 +828,4 @@ async function initializeApp() {
 }
 
 initializeApp();
+console.log("APP REACHED THE END");
