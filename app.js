@@ -213,7 +213,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 
 const studyDay =
 document.getElementById("studyDay");
-
+console.log("studyDay =", studyDay);
 const studyDetails =
 document.getElementById("studyDetails");
 
