@@ -763,9 +763,9 @@ async function markStudyDayComplete() {
 
     catch (error) {
 
-        console.error(error);
+    console.error("SAVE ERROR:", error);
 
-    }
+    alert(error.message);
 
 }
 
