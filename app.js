@@ -372,7 +372,9 @@ overallProgress.max =
         updateCoach(
             readiness
         );
-
+loadNextTopic(
+    completedTopics
+);
     }
 function loadNextTopic(
     completedTopics
