@@ -814,33 +814,123 @@ renderCard();
 const kqlQuestions = [
 
 {
+    category: "Fundamentals",
     question: "Show failed sign-ins",
     answer: "SigninLogs | where ResultType != 0"
 },
 
 {
-    question: "Show high severity alerts",
-    answer: "SecurityAlert | where Severity == 'High'"
-},
-
-{
-    question: "Project account names only",
-    answer: "IdentityInfo | project AccountName"
-},
-
-{
+    category: "Fundamentals",
     question: "Count failed sign-ins",
     answer: "SigninLogs | where ResultType != 0 | count"
 },
 
 {
+    category: "Fundamentals",
+    question: "Project account names only",
+    answer: "IdentityInfo | project AccountName"
+},
+
+{
+    category: "Sentinel",
+    question: "Show high severity alerts",
+    answer: "SecurityAlert | where Severity == 'High'"
+},
+
+{
+    category: "Sentinel",
+    question: "Show all alert titles",
+    answer: "SecurityAlert | project AlertName"
+},
+
+{
+    category: "Sentinel",
+    question: "Count all security alerts",
+    answer: "SecurityAlert | count"
+},
+
+{
+    category: "Defender XDR",
     question: "Show devices running Windows",
     answer: "DeviceInfo | where OSPlatform == 'Windows'"
 },
 
 {
-    question: "Show all alert titles",
-    answer: "SecurityAlert | project AlertName"
+    category: "Defender XDR",
+    question: "Project device names",
+    answer: "DeviceInfo | project DeviceName"
+},
+
+{
+    category: "Defender XDR",
+    question: "Count all devices",
+    answer: "DeviceInfo | count"
+},
+
+{
+    category: "Identity",
+    question: "Show account names",
+    answer: "IdentityInfo | project AccountName"
+},
+
+{
+    category: "Identity",
+    question: "Count identities",
+    answer: "IdentityInfo | count"
+},
+
+{
+    category: "Identity",
+    question: "Project display names",
+    answer: "IdentityInfo | project AccountDisplayName"
+},
+
+{
+    category: "Advanced Hunting",
+    question: "Show process names",
+    answer: "DeviceProcessEvents | project FileName"
+},
+
+{
+    category: "Advanced Hunting",
+    question: "Count process events",
+    answer: "DeviceProcessEvents | count"
+},
+
+{
+    category: "Advanced Hunting",
+    question: "Show process events from last day",
+    answer: "DeviceProcessEvents | where Timestamp > ago(1d)"
+},
+
+{
+    category: "Email",
+    question: "Count email events",
+    answer: "EmailEvents | count"
+},
+
+{
+    category: "Email",
+    question: "Project sender addresses",
+    answer: "EmailEvents | project SenderFromAddress"
+},
+
+{
+    category: "Email",
+    question: "Show emails from last day",
+    answer: "EmailEvents | where Timestamp > ago(1d)"
+},
+
+{
+    category: "SC-200 Exam",
+    question: "Project alert severity",
+    answer: "SecurityAlert | project Severity"
+},
+
+{
+    category: "SC-200 Exam",
+    question: "Project user principal names",
+    answer: "IdentityInfo | project AccountUpn"
 }
 
 ];
