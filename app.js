@@ -411,7 +411,34 @@ function loadNextTopic(
     }
 
 }
+function loadNextTopic(
+    completedTopics
+){
 
+    const nextTopicElement =
+        document.getElementById(
+            "nextTopic"
+        );
+
+    const nextTopic =
+        studyPlan.find(
+            item =>
+                !completedTopics[item.date]
+        );
+
+    if (!nextTopic) {
+
+        nextTopicElement.textContent =
+            "🏆 All Topics Complete";
+
+        return;
+
+    }
+
+    nextTopicElement.textContent =
+        nextTopic.topic;
+
+}
 // ======================================
 // TODAY'S MISSION
 // ======================================
