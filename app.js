@@ -236,7 +236,7 @@ async function renderStudyPlan() {
     });
 
 }
-
+async function renderStudyPlan(){
     studyDay.innerHTML = "";
 
     const snap =
