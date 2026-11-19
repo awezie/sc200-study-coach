@@ -863,12 +863,7 @@ async function checkCompletion() {
     }
 
 }
-async function checkCompletion() {
 
-    calendarStatus.textContent =
-        "Not completed";
-
-}
 // ======================================
 // STARTUP
 // ======================================
