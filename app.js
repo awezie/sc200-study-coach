@@ -388,8 +388,23 @@ function loadNextTopic(
             "nextTopic"
         );
 
+    const nextTopic =
+        studyPlan.find(
+            item =>
+                !completedTopics[item.date]
+        );
+
+    if (!nextTopic) {
+
+        nextTopicElement.textContent =
+            "🏆 All Topics Complete";
+
+        return;
+
+    }
+
     nextTopicElement.textContent =
-        "TEST";
+        nextTopic.topic;
 
 }
     
