@@ -217,7 +217,25 @@ console.log("studyDay =", studyDay);
 const studyDetails =
 document.getElementById("studyDetails");
 
-async function renderStudyPlan(){
+async function renderStudyPlan() {
+
+    studyDay.innerHTML = "";
+
+    studyPlan.forEach((item, index) => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = index;
+
+        option.textContent =
+            `${item.date} - ${item.topic}`;
+
+        studyDay.appendChild(option);
+
+    });
+
+}
 
     studyDay.innerHTML = "";
 
