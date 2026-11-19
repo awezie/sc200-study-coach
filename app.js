@@ -959,6 +959,7 @@ else {
 updateKqlReadiness();
     }
 );
+updateKqlReadiness();
 // ======================================
 // SAVE MEASUREUP SCORE
 // ======================================
