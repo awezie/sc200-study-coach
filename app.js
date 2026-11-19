@@ -234,13 +234,8 @@ console.log(
 
         option.value = index;
 
-       const completed =
-    completedTopics[item.date];
-
-option.textContent =
-    completed
-        ? `✅ ${item.date} - ${item.topic}`
-        : `${item.date} - ${item.topic}`;
+       option.textContent =
+    `${item.date} - ${item.topic}`;
 
         studyDay.appendChild(option);
 
@@ -328,10 +323,7 @@ Math.round(
 
        completedDaysElement.textContent =
     `${completed} / ${studyPlan.length}`;
-overallProgress.max =
-studyPlan.length;
-        overallProgress.value =
-        completed;
+
 overallProgress.max =
     studyPlan.length;
         progressPercent.textContent =
