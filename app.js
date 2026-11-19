@@ -840,11 +840,71 @@ const kqlQuestions = [
 ];
 
 let currentKqlQuestion = 0;
-
+let kqlCorrect = 0;
+let kqlAttempts = 0;
 const kqlQuestionElement =
 document.getElementById(
     "kqlQuestion"
 );
+const kqlProgressElement =
+document.getElementById(
+    "kqlProgress"
+);
+
+const kqlReadinessElement =
+document.getElementById(
+    "kqlReadiness"
+);
+function updateKqlReadiness(){
+
+    let readiness = 0;
+
+    if(
+        kqlAttempts > 0
+    ){
+
+        readiness =
+            Math.round(
+                (
+                    kqlCorrect /
+                    kqlAttempts
+                ) * 100
+            );
+
+    }
+
+    kqlProgressElement.value =
+        readiness;
+
+    kqlReadinessElement.textContent =
+        readiness + "%";
+
+}
+function updateKqlReadiness(){
+
+    let readiness = 0;
+
+    if(
+        kqlAttempts > 0
+    ){
+
+        readiness =
+            Math.round(
+                (
+                    kqlCorrect /
+                    kqlAttempts
+                ) * 100
+            );
+
+    }
+
+    kqlProgressElement.value =
+        readiness;
+
+    kqlReadinessElement.textContent =
+        readiness + "%";
+
+}
 
 const kqlAnswerElement =
 document.getElementById(
