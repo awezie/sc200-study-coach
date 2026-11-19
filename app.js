@@ -734,12 +734,8 @@ console.log("MARK BUTTON CLICKED");
         completedTopics[
             selectedItem.date
         ] = true;
-alert(JSON.stringify(completedTopics));
-  completedTopics[
-    selectedItem.date
-] = true;
 
-alert(JSON.stringify(completedTopics));
+  
 
 await setDoc(
 
