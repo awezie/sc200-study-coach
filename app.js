@@ -855,31 +855,7 @@ const kqlReadinessElement =
 document.getElementById(
     "kqlReadiness"
 );
-function updateKqlReadiness(){
-
-    let readiness = 0;
-
-    if(
-        kqlAttempts > 0
-    ){
-
-        readiness =
-            Math.round(
-                (
-                    kqlCorrect /
-                    kqlAttempts
-                ) * 100
-            );
-
-    }
-
-    kqlProgressElement.value =
-        readiness;
-
-    kqlReadinessElement.textContent =
-        readiness + "%";
-
-}
+ 
 function updateKqlReadiness(){
 
     let readiness = 0;
