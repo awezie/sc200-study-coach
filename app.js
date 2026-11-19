@@ -267,26 +267,7 @@ async function renderStudyPlan(){
 
 }
 
-studyDetails.innerHTML=`
 
-<p><strong>${item.tier}</strong></p>
-
-<p>${item.topic}</p>
-
-<p>
-
-<a href="${item.link}"
-target="_blank">
-
-Open Learning Material
-
-</a>
-
-</p>
-
-`;
-
-}
 
 studyDay.addEventListener(
     "change",
