@@ -735,30 +735,39 @@ console.log("MARK BUTTON CLICKED");
             selectedItem.date
         ] = true;
 alert(JSON.stringify(completedTopics));
-        await setDoc(
+  completedTopics[
+    selectedItem.date
+] = true;
 
-            doc(
-                db,
-                "users",
-                "awele"
-            ),
+alert(JSON.stringify(completedTopics));
 
-            {
-                completedTopics:
-                    completedTopics
-            },
+await setDoc(
 
-            {
-                merge: true
-            }
+    doc(
+        db,
+        "users",
+        "awele"
+    ),
 
-        );
+    {
+        completedTopics:
+            completedTopics
+    },
 
-        calendarStatus.textContent =
-            "✅ Completed";
+    {
+        merge: true
+    }
 
-        await renderStudyPlan();
+);
 
+calendarStatus.textContent =
+    "✅ Completed";
+
+await renderStudyPlan();
+
+await checkCompletion();
+
+await loadDashboard();   
     }
 
     catch (error) {
