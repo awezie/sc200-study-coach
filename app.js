@@ -413,8 +413,8 @@ const domains = {};
 
 studyPlan.forEach(item => {
 
-    const domain =
-        item.domain || "General";
+ const domain =
+    item.domain;
 
     if (!domains[domain]) {
 
