@@ -280,11 +280,6 @@ studyDay.addEventListener(
     }
 );
 
-renderStudyPlan();
-
-loadStudyDay();
-
-checkCompletion();
 // ======================================
 // DASHBOARD DATA
 // ======================================
