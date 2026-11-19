@@ -78,6 +78,7 @@ const studyPlan = [
 {
 date:"2026-11-18",
 tier:"🔴 Tier 1 (Critical)",
+domain:"General",
 topic:"SC-200 Skills Measured",
 link:"https://learn.microsoft.com/credentials/certifications/resources/study-guides/sc-200"
 },
@@ -92,6 +93,7 @@ link:"https://learn.microsoft.com/training/modules/describe-concepts-of-security
 {
 date:"2026-11-20",
 tier:"🔴 Tier 1 (Critical)",
+domain:"Defender XDR",
 topic:"Microsoft Defender XDR Overview",
 link:"https://learn.microsoft.com/defender-xdr/"
 },
@@ -99,6 +101,7 @@ link:"https://learn.microsoft.com/defender-xdr/"
 {
 date:"2026-11-21",
 tier:"🔴 Tier 1 (Critical)",
+domain:"Sentinel",
 topic:"Microsoft Sentinel Overview",
 link:"https://learn.microsoft.com/azure/sentinel/overview"
 },
@@ -141,6 +144,7 @@ link:"https://learn.microsoft.com/defender-xdr/automatic-attack-disruption"
 {
 date:"2026-11-27",
 tier:"🔴 Tier 1 (Critical)",
+domain:"KQL",
 topic:"KQL Fundamentals",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/tutorials/learn-common-operators"
 },
@@ -148,6 +152,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/tutorials/lear
 {
 date:"2026-11-28",
 tier:"🟠 Tier 2 (Important)",
+domain:"Security Copilot",
 topic:"Microsoft Security Copilot Fundamentals",
 link:"https://learn.microsoft.com/security-copilot/get-started-security-copilot"
 },
@@ -388,6 +393,61 @@ document.getElementById(
     "completedTopicsList"
 ).innerHTML =
     completedHtml;
+      let domainHtml = "";
+
+const domains = {};
+
+studyPlan.forEach(item => {
+
+    const domain =
+        item.domain || "General";
+
+    if (!domains[domain]) {
+
+        domains[domain] = {
+
+            total: 0,
+            completed: 0
+
+        };
+
+    }
+
+    domains[domain].total++;
+
+    if (
+        completedTopics[item.date]
+    ) {
+
+        domains[domain]
+        .completed++;
+
+    }
+
+});
+
+Object.keys(domains)
+.forEach(domain => {
+
+    const percent =
+        Math.round(
+            (
+                domains[domain]
+                .completed /
+                domains[domain]
+                .total
+            ) * 100
+        );
+
+    domainHtml +=
+        `<p>${domain}: ${percent}%</p>`;
+
+});
+
+document.getElementById(
+    "domainReadiness"
+).innerHTML =
+    domainHtml;
     }
     catch(error){
 
