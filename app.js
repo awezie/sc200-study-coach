@@ -236,18 +236,6 @@ async function renderStudyPlan() {
     });
 
 }
-async function renderStudyPlan() {
-
-    alert("renderStudyPlan is running");
-
-    studyDay.innerHTML = `
-        <option>Test 1</option>
-        <option>Test 2</option>
-        <option>Test 3</option>
-    `;
-}
-
-
 
 studyDay.addEventListener(
     "change",
