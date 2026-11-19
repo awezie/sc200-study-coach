@@ -988,8 +988,14 @@ document.getElementById(
     "kqlResult"
 );
 
-kqlQuestionElement.textContent =
-    kqlQuestions[0].question;
+kqlQuestionElement.innerHTML =
+`
+<strong>
+${kqlQuestions[0].category}
+</strong>
+<br><br>
+${kqlQuestions[0].question}
+`;
 
 document.getElementById(
     "nextKql"
@@ -1008,10 +1014,14 @@ document.getElementById(
 
         }
 
-        kqlQuestionElement.textContent =
-            kqlQuestions[
-                currentKqlQuestion
-            ].question;
+       kqlQuestionElement.innerHTML =
+`
+<strong>
+${kqlQuestions[currentKqlQuestion].category}
+</strong>
+<br><br>
+${kqlQuestions[currentKqlQuestion].question}
+`;
 
     }
 );
@@ -1060,6 +1070,10 @@ document.getElementById(
 );
 
 updateKqlReadiness();
+document.getElementById(
+    "kqlScore"
+).textContent =
+`${kqlCorrect} / ${kqlAttempts}`;
 
 // ======================================
 // SAVE MEASUREUP SCORE
