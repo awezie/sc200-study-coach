@@ -411,13 +411,8 @@ function loadNextTopic(
         nextTopic.topic;
 
 }
-    catch(error){
+    
 
-        console.error(error);
-
-    }
-
-}
 function loadNextTopic(
     completedTopics
 ){
