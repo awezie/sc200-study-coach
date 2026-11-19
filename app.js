@@ -369,10 +369,25 @@ async function loadDashboard(){
         loadNextTopic(
             completedTopics
         );
+let completedHtml = "";
+
+studyPlan.forEach(item => {
+
+    if (
+        completedTopics[item.date]
+    ) {
+
+        completedHtml +=
+            `<p>✅ ${item.topic}</p>`;
+
+    }
+
+});
+
 document.getElementById(
     "completedTopicsList"
 ).innerHTML =
-    "✅ Testing";
+    completedHtml;
     }
     catch(error){
 
