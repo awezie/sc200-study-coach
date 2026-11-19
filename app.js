@@ -768,7 +768,7 @@ console.log("MARK BUTTON CLICKED");
     alert(error.message);
 
 }
-
+}   //
 markStudyDayButton
 .addEventListener(
 "click",
