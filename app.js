@@ -814,6 +814,38 @@ renderCard();
 const kqlQuestions = [
 
 {
+    question: "Show failed sign-ins",
+    answer: "SigninLogs | where ResultType != 0"
+},
+
+{
+    question: "Show high severity alerts",
+    answer: "SecurityAlert | where Severity == 'High'"
+},
+
+{
+    question: "Project account names only",
+    answer: "IdentityInfo | project AccountName"
+},
+
+{
+    question: "Count failed sign-ins",
+    answer: "SigninLogs | where ResultType != 0 | count"
+},
+
+{
+    question: "Show devices running Windows",
+    answer: "DeviceInfo | where OSPlatform == 'Windows'"
+},
+
+{
+    question: "Show all alert titles",
+    answer: "SecurityAlert | project AlertName"
+}
+
+];
+
+{
     question:
     "Show failed sign-ins",
 
