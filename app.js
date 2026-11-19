@@ -875,6 +875,30 @@ async function checkCompletion() {
 
 loadDashboard();
 renderStudyPlan();
-loadStudyDay();
+function loadStudyDay() {
+
+    const item =
+        studyPlan[studyDay.value];
+
+    if (!item) {
+        return;
+    }
+
+    studyDetails.innerHTML = `
+
+    <p><strong>${item.tier}</strong></p>
+
+    <p>${item.topic}</p>
+
+    <p>
+        <a href="${item.link}"
+           target="_blank">
+           Open Learning Material
+        </a>
+    </p>
+
+    `;
+
+}
 
 checkCompletion();
