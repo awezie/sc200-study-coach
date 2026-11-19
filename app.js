@@ -814,6 +814,41 @@ document.getElementById(
 
 kqlQuestionElement.textContent =
     "Show failed sign-ins";
+const kqlQuestions = [
+
+    "Show failed sign-ins",
+
+    "Show high severity alerts",
+
+    "Project account names only"
+
+];
+
+let currentKqlQuestion = 0;
+document.getElementById(
+    "nextKql"
+).addEventListener(
+    "click",
+    () => {
+
+        currentKqlQuestion++;
+
+        if(
+            currentKqlQuestion >=
+            kqlQuestions.length
+        ){
+
+            currentKqlQuestion = 0;
+
+        }
+
+        kqlQuestionElement.textContent =
+            kqlQuestions[
+                currentKqlQuestion
+            ];
+
+    }
+);
 // ======================================
 // SAVE MEASUREUP SCORE
 // ======================================
