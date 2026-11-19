@@ -838,7 +838,9 @@ async function checkCompletion() {
 function loadStudyDay() {
 
     const item =
-        studyPlan[studyDay.value];
+    studyPlan[
+        studyDay.value || 0
+    ];
 
     if (!item) {
         return;
