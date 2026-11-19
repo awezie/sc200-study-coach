@@ -807,15 +807,11 @@ nextCardButton
 );
 
 renderCard();
-const kqlQuestionElement =
-document.getElementById(
-    "kqlQuestion"
-);
+// ======================================
+// KQL PRACTICE LAB
+// ======================================
 
-kqlQuestionElement.textContent =
-  const kqlQuestions = [ 
-  kqlQuestions[0].question;
-
+const kqlQuestions = [
 
 {
     question:
@@ -844,6 +840,25 @@ kqlQuestionElement.textContent =
 ];
 
 let currentKqlQuestion = 0;
+
+const kqlQuestionElement =
+document.getElementById(
+    "kqlQuestion"
+);
+
+const kqlAnswerElement =
+document.getElementById(
+    "kqlAnswer"
+);
+
+const kqlResultElement =
+document.getElementById(
+    "kqlResult"
+);
+
+kqlQuestionElement.textContent =
+    kqlQuestions[0].question;
+
 document.getElementById(
     "nextKql"
 ).addEventListener(
@@ -852,52 +867,21 @@ document.getElementById(
 
         currentKqlQuestion++;
 
-        if(
+        if (
             currentKqlQuestion >=
             kqlQuestions.length
-        ){
+        ) {
 
             currentKqlQuestion = 0;
 
         }
 
-      kqlQuestionElement.textContent =
-    kqlQuestions[
-        currentKqlQuestion
-    ].question;
+        kqlQuestionElement.textContent =
+            kqlQuestions[
+                currentKqlQuestion
+            ].question;
 
     }
-);
-const kqlAnswerElement =
-document.getElementById(
-    "kqlAnswer"
-);
-
-const kqlResultElement =
-document.getElementById(
-    "kqlResult"
-);
-document.getElementById(
-    "checkKql"
-).addEventListener(
-    "click",
-    () => {
-
-        if(
-            kqlAnswerElement.value
-            .trim() !== ""
-        ){
-
-            kqlResultElement.innerHTML =
-               
-const kqlAnswerElement =
-document.getElementById(
-    "kqlAnswer"
-);
-
-const kqlResultElement =
-document.getElementById(
-    "kqlResult"
 );
 
 document.getElementById(
@@ -919,30 +903,19 @@ document.getElementById(
             .toLowerCase()
             .trim();
 
-        if(
+        if (
             actual === expected
-        ){
+        ) {
 
             kqlResultElement.innerHTML =
                 "✅ Correct";
 
         }
 
-        else{
+        else {
 
             kqlResultElement.innerHTML =
                 `❌ Correct Answer:<br><br>${expected}`;
-
-        }
-
-    }
-);
-        }
-
-        else{
-
-            kqlResultElement.innerHTML =
-                "❌ Enter a KQL query first";
 
         }
 
