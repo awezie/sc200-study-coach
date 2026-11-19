@@ -326,6 +326,8 @@ Math.round(
 
 overallProgress.max =
     studyPlan.length;
+      overallProgress.value =
+    completed;
         progressPercent.textContent =
         readiness + "%";
 
