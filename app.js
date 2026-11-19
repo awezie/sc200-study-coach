@@ -807,7 +807,13 @@ nextCardButton
 );
 
 renderCard();
+const kqlQuestionElement =
+document.getElementById(
+    "kqlQuestion"
+);
 
+kqlQuestionElement.textContent =
+    "Show failed sign-ins";
 // ======================================
 // SAVE MEASUREUP SCORE
 // ======================================
