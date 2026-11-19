@@ -326,13 +326,14 @@ Math.round(
     ) * 100
 );
 
-        completedDaysElement.textContent =
-        completed;
+       completedDaysElement.textContent =
+    `${completed} / ${studyPlan.length}`;
 overallProgress.max =
 studyPlan.length;
         overallProgress.value =
         completed;
-
+overallProgress.max =
+    studyPlan.length;
         progressPercent.textContent =
         readiness + "%";
 
