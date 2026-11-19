@@ -955,7 +955,7 @@ else {
         `❌ Correct Answer:<br><br>${expected}`;
 
 }
-
+updateKqlReadiness();
 
     }
 );
