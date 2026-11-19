@@ -86,6 +86,7 @@ link:"https://learn.microsoft.com/credentials/certifications/resources/study-gui
 {
 date:"2026-11-19",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"General",
 topic:"Security Operations Concepts",
 link:"https://learn.microsoft.com/training/modules/describe-concepts-of-security-operations/"
 },
@@ -109,6 +110,7 @@ link:"https://learn.microsoft.com/azure/sentinel/overview"
 {
 date:"2026-11-22",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"Sentinel",
 topic:"Incidents and Alerts",
 link:"https://learn.microsoft.com/azure/sentinel/incidents"
 },
@@ -116,6 +118,7 @@ link:"https://learn.microsoft.com/azure/sentinel/incidents"
 {
 date:"2026-11-23",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"Defender XDR",
 topic:"Defender XDR Incidents",
 link:"https://learn.microsoft.com/defender-xdr/incidents-overview"
 },
@@ -123,6 +126,7 @@ link:"https://learn.microsoft.com/defender-xdr/incidents-overview"
 {
 date:"2026-11-24",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"Defender XDR",
 topic:"Advanced Hunting",
 link:"https://learn.microsoft.com/defender-xdr/advanced-hunting-overview"
 },
@@ -130,6 +134,7 @@ link:"https://learn.microsoft.com/defender-xdr/advanced-hunting-overview"
 {
 date:"2026-11-25",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"Defender XDR",
 topic:"Device Investigation",
 link:"https://learn.microsoft.com/defender-endpoint/investigate-machines"
 },
@@ -137,6 +142,7 @@ link:"https://learn.microsoft.com/defender-endpoint/investigate-machines"
 {
 date:"2026-11-26",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"Defender XDR",
 topic:"Automatic Attack Disruption",
 link:"https://learn.microsoft.com/defender-xdr/automatic-attack-disruption"
 },
@@ -160,6 +166,7 @@ link:"https://learn.microsoft.com/security-copilot/get-started-security-copilot"
 {
 date:"2026-11-29",
 tier:"🟠 Tier 2 (Important)",
+  domain:"Security Copilot",
 topic:"Microsoft Security Copilot Workflows",
 link:"https://learn.microsoft.com/security-copilot/"
 },
@@ -167,6 +174,7 @@ link:"https://learn.microsoft.com/security-copilot/"
 {
 date:"2026-11-30",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Where Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -174,6 +182,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-01",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Summarize Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -181,6 +190,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-02",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Project Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -188,6 +198,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-03",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Extend Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -195,6 +206,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-04",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Join Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -202,6 +214,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-05",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Parse Operator",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 },
@@ -209,6 +222,7 @@ link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 {
 date:"2026-12-06",
 tier:"🔴 Tier 1 (Critical)",
+  domain:"KQL",
 topic:"KQL Review Lab",
 link:"https://learn.microsoft.com/azure/data-explorer/kusto/query/"
 }
