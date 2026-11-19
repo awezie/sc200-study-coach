@@ -962,23 +962,25 @@ document.getElementById(
             kqlAnswerElement.value
             .toLowerCase()
             .trim();
+kqlAttempts++;
+       if (
+    actual === expected
+) {
 
-        if (
-            actual === expected
-        ) {
+    kqlCorrect++;
 
-            kqlResultElement.innerHTML =
-                "✅ Correct";
+    kqlResultElement.innerHTML =
+        "✅ Correct";
 
-        }
+}
+else {
 
-        else {
+    kqlResultElement.innerHTML =
+        `❌ Correct Answer:<br><br>${expected}`;
 
-            kqlResultElement.innerHTML =
-                `❌ Correct Answer:<br><br>${expected}`;
+}
 
-        }
-
+updateKqlReadiness();
     }
 );
 // ======================================
