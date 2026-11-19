@@ -219,11 +219,16 @@ const studyDetails =
 document.getElementById("studyDetails");
 
 async function renderStudyPlan() {
-
+console.log("studyPlan length =",
+            studyPlan.length
+           );
     studyDay.innerHTML = "";
 
     studyPlan.forEach((item, index) => {
-
+console.log(
+  "Adding",
+  item.topic
+);
         const option =
             document.createElement("option");
 
