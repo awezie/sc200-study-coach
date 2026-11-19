@@ -817,7 +817,52 @@ markStudyDayButton
 "click",
 markStudyDayComplete
 );
+async function checkCompletion() {
 
+    const selectedItem =
+        studyPlan[studyDay.value];
+
+    if (!selectedItem) {
+        return;
+    }
+
+    try {
+
+        const snap = await getDoc(
+            doc(
+                db,
+                "users",
+                "awele"
+            )
+        );
+
+        if (
+            snap.exists() &&
+            snap.data().completedTopics &&
+            snap.data().completedTopics[
+                selectedItem.date
+            ]
+        ) {
+
+            calendarStatus.textContent =
+                "✅ Completed";
+
+        } else {
+
+            calendarStatus.textContent =
+                "Not completed";
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+    }
+
+}
 // ======================================
 // STARTUP
 // ======================================
