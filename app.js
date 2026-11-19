@@ -1064,12 +1064,17 @@ document.getElementById(
 
         }
 
-       updateKqlReadiness();
+              updateKqlReadiness();
+
+       document.getElementById(
+           "kqlScore"
+       ).textContent =
+       `${kqlCorrect} / ${kqlAttempts}`;
 
     }
 );
+ updateKqlReadiness();
 
-updateKqlReadiness();
 document.getElementById(
     "kqlScore"
 ).textContent =
